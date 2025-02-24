@@ -295,7 +295,7 @@ class DualQuaternion:
     # q^-1 = q* / ||q||^2
     # assume that q0 is nonzero!
     def inverse(self):
-        normsq = complex(q0.dot(q0), 2. * self.q0.q.dot(self.qe.q))
+        normsq = complex(self.q0.dot(self.q0), 2. * self.q0.q.dot(self.qe.q))
         inv_len_real = 1. / normsq.real
         return ~self * complex(
             inv_len_real, -normsq.imag * inv_len_real * inv_len_real)
